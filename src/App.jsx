@@ -1,13 +1,17 @@
-
+import DepartmentSelectionPage from "./Components/DepartmentSelectionPage";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ProductList from "./Components/ProductList";
-import { getProducts } from "./Service/Api";
 
 function App() {
-  getProducts();
   return (
     <div>
-      <div className="flex justify-center items-center text-3xl pt-10 font-bold text-blue-400 font-serif">Products</div>
-      <ProductList/>
+      <Router>
+        <Routes>
+          <Route path="/" element={<DepartmentSelectionPage />} />
+          <Route path="/products/:deptName" element={<ProductList />} />
+          <Route path="/products" element={<ProductList />} />
+        </Routes>
+      </Router>
     </div>
   );
 }

@@ -20,6 +20,9 @@ function ProductList() {
 
   return (
     <div>
+      <div className="flex justify-center items-center text-3xl pt-10 font-bold text-blue-400 font-serif">
+        Products
+      </div>
       <ProductListCard products={products} />
     </div>
   );

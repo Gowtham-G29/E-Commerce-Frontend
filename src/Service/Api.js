@@ -6,7 +6,6 @@ export const getProducts = async () => {
     try {
 
         const response = await axios.get(`${API_BASE_URL}/products`);
-        console.log(response);
         return response;
 
     } catch (err) {
@@ -16,4 +15,13 @@ export const getProducts = async () => {
     }
 }
 
-getProducts();
+export const getAllDepts=async()=>{
+    try{
+        const response=await axios.get(`${API_BASE_URL}/departments`);
+        return response;
+    }catch(err){
+        console.log(err);
+
+    }
+}
+
